@@ -1,0 +1,17 @@
+{
+  "name": "nodeBasis",
+  "script": "./app.js",
+  "log_date_format": "YYYY-MM-DD HH:mm Z",
+  "error_file": "log/node-app.error.log",
+  "env": {
+    "PORT": 9005,
+    "NODE_ENV": "development"
+  },
+  "env_production": {
+    "PORT": 80,
+    "NODE_ENV": "production"
+  },
+  "watch": true,
+  "instances": "max",
+  "exec_mode": "cluster"
+}
