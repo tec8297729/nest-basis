@@ -6,13 +6,13 @@ import {
   HttpStatus,
 } from '@nestjs/common';
 import { Request, Response } from 'express';
-import { logError } from 'src/logger/log4js';
+import { logError } from 'src/utils/log4js';
 
 // 捕获寻找http异常(指定的类型)
 @Catch(HttpException)
 export class GlobalErrorFilterMiddleware implements ExceptionFilter {
   // 异常过滤器,exception必须指定捕获的异常类型
-  catch(exception: unknown, host: ArgumentsHost) {
+  catch(exception: unknown, host: ArgumentsHost): void {
     const ctx = host.switchToHttp();
     const response = ctx.getResponse<Response>();
     const request = ctx.getRequest<Request>();

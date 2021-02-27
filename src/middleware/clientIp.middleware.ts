@@ -6,7 +6,7 @@ import randomIp = require('random-ip');
 // 获取用户IP
 @Injectable()
 export class ClientIpMiddleware implements NestMiddleware {
-  use(req: Request, res: Response, next: Function) {
+  use(req: Request, res: Response, next: () => void): void {
     let ip = requestIp.getClientIp(req);
     if (ip === '::1') {
       // local test, do mock
