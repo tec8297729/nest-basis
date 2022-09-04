@@ -1,4 +1,4 @@
-
+# nestjs脚手架
 
 ```bash
 # development
@@ -11,3 +11,8 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+本地访问地址
+
+```bash
+http://localhost:7000/
+```

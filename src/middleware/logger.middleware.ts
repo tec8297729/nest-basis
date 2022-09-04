@@ -1,11 +1,12 @@
 import { Injectable, NestMiddleware } from '@nestjs/common';
 import { Request, Response } from 'express';
 import { logFatal } from '../logger/log4js';
-import { isDevEnv } from 'src/utils/isEnv';
+import { isDevEnv } from '@/utils/isEnv';
+import { NextFn } from '@/types/index.types';
 
 @Injectable()
 export class LoggerMiddleware implements NestMiddleware {
-  use(req: Request, res: Response, next: Function) {
+  use(req: Request, res: Response, next: NextFn) {
     try {
       next();
     } catch (err) {
